@@ -1,0 +1,32 @@
+<div class="products-container">
+    <div class="header-section">
+        <h2 class="main-title">
+            <span class="subtitle">Modelo Angular</span>
+            <span class="title-highlight">Productos</span>
+        </h2>
+    </div>
+
+    <div class="products-grid">
+        @for(product of productos; track product){
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src={{product.imagen}} alt={{product.nombre}} class="product-image">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">{{product.nombre}}</h3>
+                    <div class="price-section">
+                        <span class="price-label">Precio: {{product.precio}} $</span>
+                        <span class="product-price">{{product.precio}} $</span>
+                    </div>
+                    <button class="btn-add-cart">
+                        <span>Agregar al carrito</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
