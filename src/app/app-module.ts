@@ -11,6 +11,8 @@ import { PadreDeportesComponent } from './components/padre-deportes.component/pa
 import { HijoDeportesComponent } from './components/hijo-deportes.component/hijo-deportes.component';
 import { ComicComponent } from './components/comic.component/comic.component';
 import { LibreriaComponent } from './components/libreria.component/libreria.component';
+import { ServiceComics } from './services/service.comics';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { LibreriaComponent } from './components/libreria.component/libreria.comp
     BrowserModule, routing, FormsModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners(), appRoutingProvider
+    provideBrowserGlobalErrorListeners(),
+    appRoutingProvider,
+    ServiceComics,
+    provideHttpClient()
   ],
   bootstrap: [App]
 })
